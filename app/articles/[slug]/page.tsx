@@ -4,14 +4,16 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const articles = getAllArticles()
   return articles.map((article) => ({
     slug: article.slug,
   }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export const dynamicParams = false
+
+export function generateMetadata({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug)
   
   if (!article) {
