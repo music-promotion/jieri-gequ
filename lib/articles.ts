@@ -15,6 +15,11 @@ export interface Article {
 }
 
 export function getAllArticles(): Article[] {
+  // 检查目录是否存在
+  if (!fs.existsSync(articlesDirectory)) {
+    return []
+  }
+  
   const fileNames = fs.readdirSync(articlesDirectory)
   const articles = fileNames
     .filter(fileName => fileName.endsWith('.md'))
