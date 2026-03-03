@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jieri-gequs.top/sitemap.xml
