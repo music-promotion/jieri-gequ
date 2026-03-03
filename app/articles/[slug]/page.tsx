@@ -13,8 +13,9 @@ export function generateStaticParams() {
 
 export const dynamicParams = false
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const article = getArticleBySlug(slug)
   
   if (!article) {
     return {
@@ -29,8 +30,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   }
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug)
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const article = getArticleBySlug(slug)
 
   if (!article) {
     notFound()
