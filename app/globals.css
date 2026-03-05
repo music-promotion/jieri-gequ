@@ -1,31 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --color-primary: #1E1B4B;
-  --color-secondary: #4338CA;
-  --color-cta: #22C55E;
-  --color-background: #0F0F23;
-  --color-text: #F8FAFC;
-  --color-festival-red: #DC2626;
-  --color-festival-gold: #F59E0B;
-  
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-  --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
-}
+@import "tailwindcss";
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -35,14 +8,4 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-body {
-  font-family: 'Noto Sans TC', sans-serif;
-  background: var(--color-background);
-  color: var(--color-text);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Serif TC', serif;
 }
