@@ -90,13 +90,11 @@ export default function RootLayout({
 
   return (
     <html lang="zh-CN" className={`${notoSans.variable} ${notoSerif.variable}`}>
-      <head>
+      <body className="antialiased font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="antialiased font-sans">
         {children}
       </body>
     </html>
